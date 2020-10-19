@@ -45,15 +45,12 @@ const ImageComponent = () => {
         }
     }
     const downloadFile = () => {
-        console.log(page)
-
         let link2 = ''
         pictures.map((item) => {
             if (item.index === page) {
                 link2 = item.path;
             }
         })
-        console.log(link2)
         let fileUri = FileSystem.documentDirectory + "small.jpg";
         FileSystem.downloadAsync(link2, fileUri)
             .then(({ uri }) => {
@@ -67,14 +64,9 @@ const ImageComponent = () => {
     return (
         <SafeAreaView style={styles.container}>
             <FlatList
-                // onScrollEndDrag={(item) => {
-                //     console.log(Math.floor(item.nativeEvent.contentOffset.x / item.nativeEvent.layoutMeasurement.width))
-
-                // }}
                 onMomentumScrollEnd={(item) => {
                     const currentPage = Math.floor(item.nativeEvent.contentOffset.x / item.nativeEvent.layoutMeasurement.width);
                     setPage(currentPage)
-                    console.log(currentPage)
                 }}
                 showsHorizontalScrollIndicator={true}
                 style={styles.flatlist}
