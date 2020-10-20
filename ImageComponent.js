@@ -10,7 +10,7 @@ const ImageComponent = () => {
     const [pictures, setPictures] = useState([]);
     const [page, setPage] = useState(0);
     useEffect(() => {
-        fetch('https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=8fd2ff49a182d79766bf850bef1d9501&tags=dogs&page=12&format=json&nojsoncallback=1&api_sig=0e053aa7e296bf1f5e3ba6953d5637e7')
+        fetch('https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=28a9bdae541722608815416e493b16a3&tags=cats&format=json&nojsoncallback=1')
             .then((respond) =>
                 respond.json()
             ).then((result) => {

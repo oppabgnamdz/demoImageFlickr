@@ -14,7 +14,7 @@ const Category = ({ navigation }) => {
         navigation.navigate('ImageComponent')
     }
     useEffect(() => {
-        fetch('https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=8fd2ff49a182d79766bf850bef1d9501&tags=cats&format=json&nojsoncallback=1&api_sig=dd5701757ba3b93b812c47886d2bf78f')
+        fetch('https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=28a9bdae541722608815416e493b16a3&tags=dogs&format=json&nojsoncallback=1')
             .then((respond) =>
                 respond.json()
             ).then((result) => {
